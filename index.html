@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Время в пути на метро</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Вычислить время в пути на метро</h1>
+        <label for="fromStation">Выберите станцию откуда:</label>
+        <select id="fromStation">
+            <option value="rAeroport">🔴 Аэропорт</option>
+            <option value="rEseninskaya">🔴 Есенинская</option>
+            <option value="rMayakovskaya">🔴 Маяковская</option>
+            <option value="rSnegiryovskaya">🔴 Снегирёвская</option>
+            <option value="rMendeleevskaya">🔴 Менделеевская</option>
+            <option value="rPanteon">🔴 Пантеон</option>
+            <option value="rTeatralnaya">🔴 Театральная</option>
+            <option value="rDvoretsKultury">🔴 Дворец Культуры</option>
+            <option value="rStaryiGorod">🔴 Старый Город</option>
+            <option value="rAvtozavodskaya">🔴 Автозаводская</option>
+            <option value="rMetrogorodok">🔴 Метрогородок</option>
+            <option value="yVostochnyiPort">🟡 Восточный Порт</option>
+            <option value="yMayakovskaya">🟡 Маяковская</option>
+            <option value="yLermontovskaya">🟡 Лермонтовская</option>
+            <option value="yPushkinskaya">🟡 Пушкинская</option>
+            <option value="yVystavochnaya">🟡 Выставочная</option>
+            <option value="yFinansovaya">🟡 Финансовая</option>
+            <option value="yDomSovetov">🟡 Дом Советов</option>
+            <option value="yStudencheskaya">🟡 Студенческая</option>
+            <option value="yChistyePrudy">🟡 Чистые пруды</option>
+            <option value="yVnukovskaya">🟡 Внуковская</option>
+            <option value="yAvtozavodskaya">🟡 Автозаводская</option>
+            <option value="yBabushkinskaya">🟡 Бабушкинская</option>
+            <option value="yYugoZapadnaya">🟡 Юго-Западная</option>
+            <option value="yElektrouzavodskaya">🟡 Электроузаводская</option>
+            <option value="bNaberezhnaya">🔵 Набережная</option>
+            <option value="bTuristicheskaya">🔵 Туристическая</option>
+            <option value="bYantarnaya">🔵 Янтарная</option>
+            <option value="bKrylatskoe">🔵 Крылатское</option>
+            <option value="bNarodnoyeOpolchenie">🔵 Народное Ополчение</option>
+            <option value="bStudencheskaya">🔵 Студенческая</option>
+            <option value="bFiztekh">🔵 Физтех</option>
+            <option value="bPanteon">🔵 Пантеон</option>
+            <option value="bFrunzenskaya">🔵 Фрунзенская</option>
+            <option value="bUniversitet">🔵 Университет</option>
+            <option value="bParkPobedy">🔵 Парк Победы</option>
+            <option value="bRabochaya">🔵 Рабочая</option>
+            <option value="bPromyshlennaya">🔵 Промышленная</option>
+            <option value="bYugoVostochnaya">🔵 Юго-Восточная</option>
+            <option value="bTEC">🔵 ТЭЦ</option>
+            <option value="gZapadnyiPort">🟢 Западный Порт</option>
+            <option value="gTyoplyStan">🟢 Тёплый Стан</option>
+            <option value="gYantarnaya">🟢 Янтарная</option>
+            <option value="gTuristicheskaya">🟢 Туристическая</option>
+            <option value="gVystavochnaya">🟢 Выставочная</option>
+            <option value="gMinisterstvoYustitsii">🟢 Министерство Юстиции</option>
+            <option value="gMendeleevskaya">🟢 Менделеевская</option>
+            <option value="gRabochaya">🟢 Рабочая</option>
+            <option value="gYashlek">🟢 Яшьлек</option>
+            <option value="gOkskaya">🟢 Окская</option>
+            <option value="gUlitsaRadio">🟢 Улица Радио</option>
+            <option value="mUlitsaRadio">🚂 Улица Радио</option>
+            <option value="mVnukovskaya">🚂 Внуковская</option>
+            <option value="mSnegiryovskaya">🚂 Снегирёвская</option>
+        </select>
+
+        <label for="toStation">Выберите станцию куда:</label>
+        <select id="toStation">
+                        <option value="rAeroport">🔴 Аэропорт</option>
+            <option value="rEseninskaya">🔴 Есенинская</option>
+            <option value="rMayakovskaya">🔴 Маяковская</option>
+            <option value="rSnegiryovskaya">🔴 Снегирёвская</option>
+            <option value="rMendeleevskaya">🔴 Менделеевская</option>
+            <option value="rPanteon">🔴 Пантеон</option>
+            <option value="rTeatralnaya">🔴 Театральная</option>
+            <option value="rDvoretsKultury">🔴 Дворец Культуры</option>
+            <option value="rStaryiGorod">🔴 Старый Город</option>
+            <option value="rAvtozavodskaya">🔴 Автозаводская</option>
+            <option value="rMetrogorodok">🔴 Метрогородок</option>
+            <option value="yVostochnyiPort">🟡 Восточный Порт</option>
+            <option value="yMayakovskaya">🟡 Маяковская</option>
+            <option value="yLermontovskaya">🟡 Лермонтовская</option>
+            <option value="yPushkinskaya">🟡 Пушкинская</option>
+            <option value="yVystavochnaya">🟡 Выставочная</option>
+            <option value="yFinansovaya">🟡 Финансовая</option>
+            <option value="yDomSovetov">🟡 Дом Советов</option>
+            <option value="yStudencheskaya">🟡 Студенческая</option>
+            <option value="yChistyePrudy">🟡 Чистые пруды</option>
+            <option value="yVnukovskaya">🟡 Внуковская</option>
+            <option value="yAvtozavodskaya">🟡 Автозаводская</option>
+            <option value="yBabushkinskaya">🟡 Бабушкинская</option>
+            <option value="yYugoZapadnaya">🟡 Юго-Западная</option>
+            <option value="yElektrouzavodskaya">🟡 Электроузаводская</option>
+            <option value="bNaberezhnaya">🔵 Набережная</option>
+            <option value="bTuristicheskaya">🔵 Туристическая</option>
+            <option value="bYantarnaya">🔵 Янтарная</option>
+            <option value="bKrylatskoe">🔵 Крылатское</option>
+            <option value="bNarodnoyeOpolchenie">🔵 Народное Ополчение</option>
+            <option value="bStudencheskaya">🔵 Студенческая</option>
+            <option value="bFiztekh">🔵 Физтех</option>
+            <option value="bPanteon">🔵 Пантеон</option>
+            <option value="bFrunzenskaya">🔵 Фрунзенская</option>
+            <option value="bUniversitet">🔵 Университет</option>
+            <option value="bParkPobedy">🔵 Парк Победы</option>
+            <option value="bRabochaya">🔵 Рабочая</option>
+            <option value="bPromyshlennaya">🔵 Промышленная</option>
+            <option value="bYugoVostochnaya">🔵 Юго-Восточная</option>
+            <option value="bTEC">🔵 ТЭЦ</option>
+            <option value="gZapadnyiPort">🟢 Западный Порт</option>
+            <option value="gTyoplyStan">🟢 Тёплый Стан</option>
+            <option value="gYantarnaya">🟢 Янтарная</option>
+            <option value="gTuristicheskaya">🟢 Туристическая</option>
+            <option value="gVystavochnaya">🟢 Выставочная</option>
+            <option value="gMinisterstvoYustitsii">🟢 Министерство Юстиции</option>
+            <option value="gMendeleevskaya">🟢 Менделеевская</option>
+            <option value="gRabochaya">🟢 Рабочая</option>
+            <option value="gYashlek">🟢 Яшьлек</option>
+            <option value="gOkskaya">🟢 Окская</option>
+            <option value="gUlitsaRadio">🟢 Улица Радио</option>
+            <option value="mUlitsaRadio">🚂 Улица Радио</option>
+            <option value="mVnukovskaya">🚂 Внуковская</option>
+            <option value="mSnegiryovskaya">🚂 Снегирёвская</option>
+        </select>
+
+        <button id="calculateButton">Вычислить время</button>
+        <h2 id="result"></h2>
+    </div>
+    <img src="{{ url_for('static', filename='map.jfif') }}" alt="Карта метро" class="right-image">
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
