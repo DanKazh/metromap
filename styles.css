@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Высота на весь экран */
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Установка ширины контейнера */
+    margin-right: 20px; /* Отступ вправо для контейнера */
+}
+
+.right-image {
+    max-width: 900px; /* Установка максимальной ширины изображения */
+    height: auto; /* Автоматическая высота для поддержания пропорций */
+    border-radius: 5px; /* Закругление углов изображения */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Уменьшение стилей для итогового результата */
+h2#result {
+    margin-top: 20px;
+    font-size: 18px; /* Уменьшение размера шрифта */
+    padding: 10px; /* Уменьшение отступов вокруг текста */
+    background-color: #e9ecef; /* Светлый фон для выделения результата */
+    border-radius: 5px; /* Закругления углов */
+    text-align: center; /* Центрирование текста */
+}
